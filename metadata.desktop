@@ -1,14 +1,14 @@
 [SddmGreeterTheme]
-Name=Catppuccin macchiato
+Name=Hayashin macchiato
 Description=Soothing pastel theme for SDDM
 Type=sddm-theme
-Version=2.1
-Website=https://github.com/catppuccin/sddm
+Version=1.0
+Website=https://github.com/a9lim/sddm-macchiato
 Screenshot=preview.png
 MainScript=Main.qml
 ConfigFile=theme.conf
 TranslationsDirectory=translations
-Theme-Id=Catppuccin
+Theme-Id=Hayashin
 Theme-API=2.0
 License=MIT
 QtVersion=6
