@@ -1,7 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Shapes 2.15
 
 Item {
   property var user: userField.text
@@ -15,7 +14,7 @@ Item {
       verticalCenter: parent.verticalCenter
       horizontalCenter: parent.horizontalCenter
     }
-    height: inputHeight * ( config.UserIcon == "true" ? 10.5 : 5.3 )
+    height: inputHeight * ( config.UserIcon == "true" ? 11.2 : 5.3 )
     width: inputWidth * 1.2
     radius: 5
     visible: config.LoginBackground == "true" ? true : false
@@ -57,16 +56,17 @@ Item {
       verticalCenter: parent.verticalCenter
       horizontalCenter: parent.horizontalCenter
     }
-    Shape {
+    Rectangle {
       visible: config.UserIcon == "true" ? true : false
       width: inputWidth * 0.64 ; height: inputWidth * 0.64
       antialiasing: true
+      color: "transparent"
       Image {
-        source: Qt.resolvedUrl("../../../faces/.face.icon")
+        source: Qt.resolvedUrl("../assets/defaultIcon.svg")
         width: parent.width; height: parent.width 
       }
       Image {
-        source: Qt.resolvedUrl("../../../faces/" + user + ".face.icon")
+        source: Qt.resolvedUrl("/var/lib/AccountsService/icons/" + user)
         width: parent.width; height: parent.width
       }
       Image {
