@@ -109,7 +109,7 @@ Item {
       }
       background: Rectangle {
         id: buttonBackground
-        color: config.red
+        color: config.ThemeColor
         radius: 3
       }
       states: [
