@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
+import "../assets"
 
 Item {
   property var user: userField.text
@@ -63,15 +64,19 @@ Item {
       color: "transparent"
       Image {
         source: Qt.resolvedUrl("../assets/defaultIcon.svg")
-        width: parent.width; height: parent.width 
+        height: parent.width
+        width: parent.width
       }
       Image {
+        // common icon path for KDE and GNOME
         source: Qt.resolvedUrl("/var/lib/AccountsService/icons/" + user)
-        width: parent.width; height: parent.width
+        height: parent.width
+        width: parent.width
       }
-      Image {
-        source: Qt.resolvedUrl(config.LoginBackground == "true" ? "../assets/maskDark.svg" : "../assets/mask.svg")
-        width: parent.width; height: parent.width
+      MaskFull {
+        // workaround to prevent clipping
+        height: parent.width + 1
+        width: parent.width + 1
       }
       anchors {
         horizontalCenter: parent.horizontalCenter
@@ -109,7 +114,7 @@ Item {
       }
       background: Rectangle {
         id: buttonBackground
-        color: config.ThemeColor
+        color: config.red
         radius: 3
       }
       states: [
